@@ -1,0 +1,32 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">AutoICD API</h1>
+    <p>Learn about automated clinical text coding with <a href="https:\\www.autoicdapi.com">AutoICD API</a>.</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <br class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label for="inputText">Enter the clinical text to code to ICD10:</label>                
+                <textarea asp-for="ClinicalText" class="form-control" required style="height: 120px;" placeholder="Enter the clinical text to code..."></textarea>
+            </div>
+            <br />
+
+            <button type="submit" class="btn btn-primary float-right" style="float: right;">Code with AutoICD API</button>
+
+        </form>
+    </div>
+</div>
+
+<br />
+<label for="outputText">API Response::</label>
+<div class="code-block">
+    <pre><code>@Html.Raw(Model.Output)</code></pre>
+</div>
